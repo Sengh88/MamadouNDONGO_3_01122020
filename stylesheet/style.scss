@@ -1,0 +1,835 @@
+/* Set et Reset CSS */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap');
+
+/*
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Shrikhand', cursive;
+  font weight Roboto : 100, 300, 400, 500
+*/
+p, h2, h3{
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+h2{
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+h3{
+  font-size: 0.813rem;
+  font-weight: 500;
+}
+
+h4{
+  font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+}
+
+a{
+  text-decoration: none;
+  &:visited{
+  text-decoration: none;
+  }
+}
+
+body{
+  margin: 0;
+}
+
+// Colors
+$color-first:#9356dc;
+$color-second: #ff79da;
+$color-third: #99e2d0;
+$color-second-light: #f6edfe;
+
+$color-footer: #353535;
+$color-fonctionnement: #f6edfe;
+
+$color-light-gray: #eaeaea;
+$color-medium-gray: #f6f6f6;
+$color-dark-gray: #707070;
+$color-shadow-gray: #aaaaaa;
+
+$color-price: #353535;
+$color-plate-description:#202020;
+
+// Size
+$size-border:1rem;
+$size-loader:3rem;
+
+// Keyframes
+@keyframes spin{
+  0%{
+      transform: rotate(0turn);
+  }
+  100%{
+      transform: rotate(1turn);
+  }
+}
+
+@keyframes apparition{
+  0%{
+    transform-origin: center right;
+    // transform: scale(0);
+  }
+  20%{
+    transform-origin: center right;
+    transform: scale(0, 1);
+    opacity: 0;
+  }
+  90%{
+    opacity: 1;
+  }
+  100%{
+    transform-origin: center right;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes translation{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes color {
+  0%{
+      color: $color-medium-gray;
+  }
+  50%{
+      color: $color-dark-gray;  
+  }
+  100%{
+      color: $color-medium-gray;
+  }
+}
+
+@keyframes fade_out{
+  0%{
+      opacity: 1;
+  }
+  50%{
+      opacity: 0.5;
+  }
+  100%{
+      opacity: 0;
+      display: none;
+  }
+}
+
+@keyframes fade_in{
+  0%{
+      opacity: 0;
+  }
+  50%{
+      opacity: 0.5;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  
+  >a{
+    border-radius: 1.25rem;
+    font-size: 0.75rem;
+    color: #fff;
+    background: linear-gradient(180deg, $color-second,  $color-first);
+    box-shadow: 0rem 0.15rem 0.5rem $color-shadow-gray;
+    p{
+      font-size: 0.75rem;
+      margin: 1.25em 1.438rem;
+      font-weight: 500;
+    }
+  }
+  &__commande{
+    margin-top: 2.25rem;
+    margin-bottom: 5.188rem;
+  }
+}
+
+//Loading Spinner
+.loader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: $size-loader*5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    animation: fade_out 1s ease-in 1s forwards;
+    &__spinner{
+      border: $size-border solid $color-medium-gray;
+      border-top: $size-border solid $color-dark-gray;
+      border-radius: 50%;
+      width: $size-loader;
+      height: $size-loader;
+      animation: spin 1s linear infinite;
+  }
+  &__ico{
+    font-size: $size-loader/1.5;
+    padding-top: $size-border;
+    color: $color-footer;
+    animation: color 3s ease-in-out infinite;
+}
+}
+
+.main__fade-in{
+    opacity: 0;
+    animation: fade_in 1s 2s ease-in forwards;
+}
+
+/* Header */
+/* Div Logo */
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem;
+  padding-top: 1.438rem;
+  padding-bottom: 0.375rem;
+  color: #000;
+  h1{
+    font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
+    font-size: 1.438rem;
+    margin: 0rem;
+  }
+  &__grid--title{
+    grid-column: 2;
+  }
+  &__grid--icon{
+    grid-column: 1;
+    padding-right: 70%;
+  }
+}
+
+.logo__restaurants{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.location{
+  height: 3.125rem;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* Degradé lineaire selon une droite horizontale, qui laisse 0.01 rem pour la couleurnla plus sombre (en haut de la box) et le reste pour la couleur la plus claire */
+  background: linear-gradient(180deg,$color-shadow-gray, 0.01rem, $color-light-gray);
+  > p{
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin: 0rem 0rem 0rem 1.125rem;
+  }  
+}
+
+.explain{
+  background-color: $color-medium-gray;
+  padding-top: 2.75rem;
+  padding-bottom: 3.563rem;
+  >h2{
+    text-align: center;
+    margin: 0 4.063rem;
+  }
+  p{
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 1.25rem 2.5rem 2.5rem 1.938rem;
+  }
+}
+
+// Main, nav, carte
+//Fonctionnement
+
+.main__margin{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.carte{
+  display: grid;
+  grid-template-columns:1fr;
+  // grid-template-rows: 13.75rem 2.5rem 1fr;
+  grid-template-rows: 16.25rem 2.5rem 1fr;
+  &__header{
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column: 1;
+    overflow: hidden;
+    &--img{
+      object-fit: cover;
+      box-sizing: content-box;
+      width: 100%;
+    }
+  }
+  &__menu{
+    grid-row-start: 2;
+    grid-row-end: span 3;
+    grid-column: 1;
+    background-color: $color-medium-gray;
+    border-radius: 1.875rem 1.875rem 0rem 0rem;
+    &--title{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 2.188rem 0rem 2.75rem 0rem;
+       h2{
+      font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
+      margin: 0rem 0rem;
+      }
+    }
+    &--header_list{
+      text-transform: uppercase;
+      margin: 0rem 0rem;
+    }
+    &--header_line{
+      margin: 0.563rem 0rem 0.875rem 0rem;
+      width: 2.5rem;
+      border-bottom: $color-third solid 0.188rem;
+    }
+  }
+}
+
+.card__tag{
+
+  display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: .9em;
+    font-weight: 500 !important;
+    top: 15px;
+    right: 15px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #278870;
+    height: 30px;
+    width: 80px;
+    background: #99e2d0;
+}
+.carte__plate{
+  border-radius: 0.813rem;
+  background-color: #fff;
+  padding-left: 0.625rem;
+  margin-bottom: 0.875rem;
+  display: grid;
+  grid-template-columns: 85% 15%;
+  grid-template-rows: 2.188rem 2.188rem;
+  user-select: none;
+  animation: fade-in 2s linear forwards;
+  &--title{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    font-size: 0.813rem;
+    font-weight: 500;
+    margin: 1rem 0rem 0rem 0rem;
+  }
+  &--description{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    font-size: 0.688rem;
+    color: $color-plate-description;
+    margin: 0rem 0rem 1rem 0rem;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &--price{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    font-size: 0.688rem;
+    font-weight: 500;
+    color: $color-price;
+    margin: 0rem 0rem 1rem 0rem;
+    padding-right: 0.625rem;
+    text-align: right;
+    transform: translateX(0%)
+    }
+  &--selector{
+    // display: none;
+    grid-row-start: 1;
+    grid-row-end: span 2 ;
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: $color-third;
+    color: #fff;
+    font-size: 1.75rem;
+    border-radius: 0rem 0.813rem 0.813rem 0rem;
+    transform: scale(0, 0);
+    opacity: 0;
+    overflow: hidden;
+    transform-origin: center right;
+  }
+  &:hover, &:active{
+    cursor: pointer;
+  }
+  &:hover > &--selector{
+    animation: apparition 300ms ease-in-out forwards;
+    >i{
+     animation: spin 500ms ease-in-out forwards;
+    }
+  }
+  &:hover > &--price{
+    animation: translation 300ms ease-in-out forwards;
+  }
+  &:active > &--selector{
+    animation: apparition 300ms ease-in-out forwards;
+    >i{
+     animation: spin 500ms ease-in-out forwards;
+    }
+  }
+  &:active > &--price{
+    animation: translation 300ms ease-in-out forwards;
+  }
+  &:hover > &--description{
+    background-color: green;
+  }
+  &:active > &--description{
+    background-color: green;
+  }
+}
+
+@mixin delay-fade_in($time, $delay){
+  animation: fade_in $time ease-in $delay forwards;
+}
+
+.carte__fade-in{
+  &--entrees{
+    .carte__plate, .carte__menu--header_fade{
+      opacity: 0;
+      &:nth-child(1){
+        @include delay-fade_in(1s, 600ms);
+      }
+      &:nth-child(2){
+        @include delay-fade_in(1s, 1200ms);
+      }
+      &:nth-child(3){
+        @include delay-fade_in(1s, 1800ms);
+      }
+      &:nth-child(4){
+        @include delay-fade_in(1s, 2400ms);
+      }
+      &:nth-child(5){
+        @include delay-fade_in(1s, 3000ms);
+      }
+    }
+  }
+  &--plats{
+    .carte__plate, .carte__menu--header_fade{
+    opacity: 0;
+    &:nth-child(1){
+      @include delay-fade_in(1s, 3600ms);
+    }
+    &:nth-child(2){
+      @include delay-fade_in(1s, 4200ms);
+    }
+    &:nth-child(3){
+      @include delay-fade_in(1s, 4800ms);
+    }
+    &:nth-child(4){
+      @include delay-fade_in(1s, 5400ms);
+    }
+    &:nth-child(5){
+      @include delay-fade_in(1s, 6000ms);
+    }
+   }
+  }
+  &--desserts{
+    .carte__plate, .carte__menu--header_fade{
+      opacity: 0;
+      &:nth-child(1){
+        @include delay-fade_in(1s, 6600ms);
+      }
+      &:nth-child(2){
+        @include delay-fade_in(1s, 7200ms);
+      }
+      &:nth-child(3){
+        @include delay-fade_in(1s, 7800ms);
+      }
+      &:nth-child(4){
+        @include delay-fade_in(1s, 8400ms);
+      }
+      &:nth-child(5){
+        @include delay-fade_in(1s, 9000ms);
+      }
+    }  
+  }
+}
+
+.fonctionnement{
+  margin-top: 3.25rem;
+  margin-bottom: 4.45rem;
+  // margin: 3.25rem 1.25rem 4.25rem 1.25rem;
+  h2{
+    margin-bottom: 0.625rem;
+  }
+  &__details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.813rem;
+    font-weight: 500rem;
+    margin-top: 1.25rem;
+  }
+  &__border{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color:$color-medium-gray;
+    border-radius: 25rem;
+    width: 100%;
+    box-shadow: 0rem 0.15rem 0.5rem $color-shadow-gray;
+    margin-left: -0.75rem;
+    &--color{
+      background-color: $color-second-light;
+    }
+  }
+  &__number{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100%;
+    background-color: $color-first;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.625rem;
+    color: #fff;
+    z-index: 100;
+  }
+  &__texte{
+    font-size: 0.813rem;
+    font-weight: 500rem;
+  }
+}
+
+.icon--fonctionnement{
+  font-size: 1.313rem;
+  margin-left: 1.375rem;
+  margin-right: 1.688rem;
+  color: $color-dark-gray;
+  z-index: 100;
+  &--color-first{
+    color: $color-first;
+  }
+}
+
+//Nav et présentation restaurants
+
+nav{
+  background-color: $color-medium-gray;
+  padding-bottom: 2.875rem;
+  h2{
+    padding-top: 3.75rem;
+    margin-bottom: 1.688rem;
+  }
+}
+
+.restaurants{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurants__details{
+  width: 100%;
+  max-width: 20.938rem;
+  height: 15.625rem;
+  background-color: #fff;
+  border-radius: 1.25rem;
+  margin-bottom: 1.125rem;
+  box-shadow: 0rem 0.15rem 0.5rem$color-shadow-gray;
+}
+
+.restaurants__img{
+  width: 100%;
+  height: 10.938rem;
+  overflow: hidden;
+  border-radius: 1.25rem 1.25rem 0rem 0rem;
+}
+
+.restaurants__img img{
+  object-fit: cover;
+  box-sizing: content-box;
+  width: 100%;
+  border-radius: 1.25rem 1.25rem 0rem 0rem;
+}
+
+.restaurants__text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  &--title{
+    margin: 1.25rem 0rem 0rem 0.875rem;
+  }
+  &--description{
+    margin: 0.625rem 0rem 0rem 0.875rem;
+    font-size: 0.813;
+    font-weight: 300;
+  }
+  >div{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.icon__restaurants--empty{
+  //padding-right: 1.5rem;
+  font-size: 1.375rem;
+  cursor: copy;
+}
+
+.icon__restaurants--full{
+  //padding-right: 1.5rem;
+  font-size: 1.375rem;
+  opacity: 0;
+  cursor: copy;
+  position: relative;
+  top: 50%;
+  right: 50%;
+}
+
+.checkbox{
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  &:hover + label{
+    color: $color-first;
+    transform: scale(1.15);
+    .icon__restaurants--empty{
+      opacity: 1;
+    }
+    .icon__restaurants--full{
+      opacity: 0.5;
+    }
+  }
+  &:checked + label{
+    color: $color-first;
+    .icon__restaurants--empty{
+      opacity: 1;
+    }
+    .icon__restaurants--full{
+      opacity: 0.5;
+    }
+  }
+  &:active + label{
+    transform: scale(1.25);
+  }
+  &:not(:checked) + label{
+    color: #000;
+    .icon__restaurants--empty{
+      opacity: 1;
+    }
+    .icon__restaurants--full{
+      opacity: 0;
+    }
+  }
+}
+
+.checkmark{
+  cursor: copy;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+//Footer
+footer{
+  background-color: $color-footer;
+  color: #fff;
+  padding-bottom: 2.375rem;
+  > h4{
+    color: #fff;
+    margin: 0rem 0rem 1.688rem 1.583rem;
+    padding-top: 1.688rem;
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+    &:visited{
+    text-decoration: none;
+    color: #fff;
+    }
+    p{
+      display: inline;
+    }
+  }
+  div{
+    margin-left: 1.563rem;
+    margin-bottom: 0.875rem;
+    font-size: 0.813rem;
+  }
+}
+
+.footer__icon{
+  padding-right: 0.75rem;
+  &--position{
+    margin-right: 0.438rem;
+  }
+}
+
+/*
+  Media querries
+*/
+/* Mobile Phone */
+
+@media screen and (max-width: 320px){
+  .logo{
+    color: #000;
+  }
+  .body{
+    width: 320px;
+    margin: auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px){
+  body{
+    width: 768px;
+    margin: auto;
+  }
+  .logo {
+    color: red;
+  }
+
+  .carte{
+    display: grid;
+    grid-template-columns:2fr;
+    grid-template-rows: 25.813rem 2.5rem 1fr;
+    &__header{
+      grid-row-start: 1;
+      grid-row-end: span 2;
+      grid-column: 1;
+      overflow: hidden;
+      &--img{
+        object-fit: cover;
+        box-sizing: content-box;
+        width: 100%;
+      }
+    }
+  }
+
+  .restaurants__img{
+    width: 100%;
+    height: 25.813rem;
+    overflow: hidden;
+    border-radius: 1.25rem 1.25rem 0rem 0rem;
+  }
+
+  .fonctionnement{
+    width: 50%;
+    margin:auto;
+  }
+  .restaurants{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    &__details{
+      margin: 0rem 1rem 1rem 1rem;
+      width: 15.625rem;
+      height: 15.625rem;
+    }
+  }
+
+  .carte__fade-in{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 4.375rem 4.375rem 4.375rem 4.375rem 4.375rem;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0.5rem;
+    grid-auto-flow: column;
+    &--entrees{
+      grid-row-start: 1;
+      grid-column-start: 1;
+    }
+    &--plats{
+      grid-row-start: 1;
+      grid-column-start: 2;
+    }
+    &--desserts{
+      grid-row-start: 1;
+      grid-column-start: 3;
+    }
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px){
+  body{
+    width: 1024px;
+    margin: auto;
+  }
+  .logo {
+    color: green;
+  }
+  .fonctionnement{
+    width: 38%;
+    margin:auto;
+  }
+
+  .carte{
+    display: grid;
+    grid-template-columns:2fr;
+    grid-template-rows: 34.375rem 2.5rem 1fr;
+    &__header{
+      grid-row-start: 1;
+      grid-row-end: span 2;
+      grid-column: 1;
+      overflow: hidden;
+      &--img{
+        object-fit: cover;
+        box-sizing: content-box;
+        width: 100%;
+      }
+    }
+  }
+
+  .carte__fade-in{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4.375rem 4.375rem 4.375rem 4.375rem 4.375rem;
+    grid-column-gap: 2rem;
+    grid-auto-flow: column;
+    &--entrees{
+      grid-row-start: 1;
+      grid-column-start: 1;
+    }
+    &--plats{
+      grid-row-start: 1;
+      grid-column-start: 2;
+    }
+    &--desserts{
+      grid-row-start: 1;
+      grid-column-start: 3;
+    }
+  }
+}
