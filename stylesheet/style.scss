@@ -420,19 +420,19 @@ $size-loader:3rem;
     .carte__plate, .carte__menu--header_fade{
       opacity: 0;
       &:nth-child(1){
-        @include delay-fade_in(1s, 600ms);
+        @include delay-fade_in(1s, 60ms);
       }
       &:nth-child(2){
-        @include delay-fade_in(1s, 1200ms);
+        @include delay-fade_in(1s, 120ms);
       }
       &:nth-child(3){
-        @include delay-fade_in(1s, 1800ms);
+        @include delay-fade_in(1s, 180ms);
       }
       &:nth-child(4){
-        @include delay-fade_in(1s, 2400ms);
+        @include delay-fade_in(1s, 240ms);
       }
       &:nth-child(5){
-        @include delay-fade_in(1s, 3000ms);
+        @include delay-fade_in(1s, 300ms);
       }
     }
   }
@@ -440,19 +440,19 @@ $size-loader:3rem;
     .carte__plate, .carte__menu--header_fade{
     opacity: 0;
     &:nth-child(1){
-      @include delay-fade_in(1s, 3600ms);
+      @include delay-fade_in(1s, 360ms);
     }
     &:nth-child(2){
-      @include delay-fade_in(1s, 4200ms);
+      @include delay-fade_in(1s, 420ms);
     }
     &:nth-child(3){
-      @include delay-fade_in(1s, 4800ms);
+      @include delay-fade_in(1s, 480ms);
     }
     &:nth-child(4){
-      @include delay-fade_in(1s, 5400ms);
+      @include delay-fade_in(1s, 540ms);
     }
     &:nth-child(5){
-      @include delay-fade_in(1s, 6000ms);
+      @include delay-fade_in(1s, 600ms);
     }
    }
   }
@@ -460,19 +460,19 @@ $size-loader:3rem;
     .carte__plate, .carte__menu--header_fade{
       opacity: 0;
       &:nth-child(1){
-        @include delay-fade_in(1s, 6600ms);
+        @include delay-fade_in(1s, 660ms);
       }
       &:nth-child(2){
-        @include delay-fade_in(1s, 7200ms);
+        @include delay-fade_in(1s, 720ms);
       }
       &:nth-child(3){
-        @include delay-fade_in(1s, 7800ms);
+        @include delay-fade_in(1s, 780ms);
       }
       &:nth-child(4){
-        @include delay-fade_in(1s, 8400ms);
+        @include delay-fade_in(1s, 840ms);
       }
       &:nth-child(5){
-        @include delay-fade_in(1s, 9000ms);
+        @include delay-fade_in(1s, 900ms);
       }
     }  
   }
