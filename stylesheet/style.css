@@ -12,12 +12,12 @@ p, h2, h3 {
 }
 
 h2 {
-  font-size: 1.125rem;
+  font-size: 1em;
   font-weight: 500;
 }
 
 h3 {
-  font-size: 0.813rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -490,7 +490,7 @@ body {
       grid-row-start: 1;
   -ms-grid-column: 1;
       grid-column-start: 1;
-  font-size: 0.813rem;
+  font-size: 1rem;
   font-weight: 500;
   margin: 1rem 0rem 0rem 0rem;
 }
@@ -500,7 +500,7 @@ body {
       grid-row-start: 2;
   -ms-grid-column: 1;
       grid-column-start: 1;
-  font-size: 0.688rem;
+  font-size: 0.915rem;
   color: #202020;
   margin: 0rem 0rem 1rem 0rem;
   display: -webkit-box;
@@ -515,7 +515,7 @@ body {
       grid-row-start: 2;
   -ms-grid-column: 2;
       grid-column-start: 2;
-  font-size: 0.688rem;
+  font-size: 0.955rem;
   font-weight: 500;
   color: #353535;
   margin: 0rem 0rem 1rem 0rem;
@@ -523,6 +523,7 @@ body {
   text-align: right;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
+  font-weight: bold;
 }
 
 .carte__plate--selector {
@@ -593,9 +594,7 @@ body {
           animation: translation 300ms ease-in-out forwards;
 }
 
-.carte__plate:hover > .carte__plate--description {
-  background-color: green;
-}
+
 
 .carte__fade-in--entrees .carte__plate, .carte__fade-in--entrees .carte__menu--header_fade {
   opacity: 0;
@@ -838,11 +837,12 @@ nav h2 {
 
 .restaurants__text--title {
   margin: 1.25rem 0rem 0rem 0.875rem;
+  
 }
 
 .restaurants__text--description {
   margin: 0.625rem 0rem 0rem 0.875rem;
-  font-size: 0.813;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -868,7 +868,10 @@ nav h2 {
   position: relative;
   top: 50%;
   right: 50%;
+  
+  
 }
+
 
 .checkbox {
   position: absolute;
@@ -889,6 +892,8 @@ nav h2 {
 
 .checkbox:hover + label .icon__restaurants--full {
   opacity: 0.5;
+  
+  
 }
 
 .checkbox:checked + label {
@@ -908,16 +913,15 @@ nav h2 {
           transform: scale(1.25);
 }
 
-.checkbox:not(:checked) + label {
-  color: #000;
-}
+
 
 .checkbox:not(:checked) + label .icon__restaurants--empty {
   opacity: 1;
 }
 
-.checkbox:not(:checked) + label .icon__restaurants--full {
+.checkbox:not(:checked) :hover + label .icon__restaurants--full {
   opacity: 0;
+  color: #9356dc;
 }
 
 .checkmark {

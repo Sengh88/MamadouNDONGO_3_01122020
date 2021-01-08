@@ -403,11 +403,7 @@ $size-loader:3rem;
   &:active > &--price{
     animation: translation 300ms ease-in-out forwards;
   }
-  &:hover > &--description{
-    background-color: green;
-  }
-  &:active > &--description{
-    background-color: green;
+ 
   }
 }
 
