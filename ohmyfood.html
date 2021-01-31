@@ -18,24 +18,26 @@
                 <i class="fas fa-utensils"></i>
             </span>
         </div>
-        <main class="main__fade-in">
-            <header>
-                <div class="logo">
-                    <h1>ohmyfood</h1>
-                </div>
-                <div class="location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p> Paris, Belville</p>
-                </div>
-                <div class="explain">
-                    <h2>Réservez le menu qui vous convient</h2>
-                    <p>Découvrez des restaurant d'exception, séléctionnés par nos soins.</p>
-                    <div class="btn btn__explore">
-                        <a href="#restaurants">
-                            <p>Explorer nos restaurants</p>
-                        </a>
-                    </div>
-                </div>
+        <header>
+            <img src="images/logo/ohmyfood@2x.svg" alt="logo">
+        </header>
+    
+        <div id="content">
+    
+            <form id="localisation">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <input type="text" name="localisation" value="Paris, Belleville" readonly>    
+                    <input type="submit" value="Rechercher">
+            </form>
+    
+            <section id="presentation">
+                <h1>Réservez le menu qui vous convient</h1>
+                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                <a href="#restaurants" class="button">Explorer nos restaurants
+                    <div class="button__bg"></div>
+                </a>
+            </section>
+
             </header>
             <section id="fonctionnement">
                 <h2>Fonctionnement</h2>

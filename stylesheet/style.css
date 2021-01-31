@@ -1,240 +1,63 @@
-@charset "UTF-8";
-/* Set et Reset CSS */
-/* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap");
-/*
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Shrikhand', cursive;
-  font weight Roboto : 100, 300, 400, 500
-*/
-p, h2, h3 {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+/*px*/
+html, body {
+  max-width: 100%;
+  min-height: 100%;
+  user-select: none;
+  font-family: Roboto, sans-serif;
+  color: black;
 }
 
-h2 {
-  font-size: 1em;
-  font-weight: 500;
+body {
+  background: #f6f6f6;
+  text-align: center;
+  font-size: 1.1em;
+  position: relative;
 }
 
-h3 {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-h4 {
-  font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
-  font-size: 0.875rem;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
-a:visited {
-  text-decoration: none;
+ul {
+  list-style: none;
 }
 
-body {
-  margin: 0;
+h1 {
+  font-size: 1.4em;
+  padding: 25px 75px;
 }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0turn);
-            transform: rotate(0turn);
-  }
-  100% {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
+h2 {
+  font-size: 1.3em;
+  padding-top: 60px;
+  padding-bottom: 25px;
 }
 
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0turn);
-            transform: rotate(0turn);
-  }
-  100% {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
+h3 {
+  font-size: 1.1em;
 }
 
-@-webkit-keyframes apparition {
-  0% {
-    -webkit-transform-origin: center right;
-            transform-origin: center right;
-  }
-  20% {
-    -webkit-transform-origin: center right;
-            transform-origin: center right;
-    -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-    opacity: 0;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform-origin: center right;
-            transform-origin: center right;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-    animation-duration: 10ms;
-  }
+img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 250px;
 }
 
-
-@keyframes apparition {
-  0% {
-    -webkit-transform-origin: center right;
-            transform-origin: center right;
-  }
-  20% {
-    -webkit-transform-origin: center right;
-            transform-origin: center right;
-    -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-    opacity: 0;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform-origin: center right;
-            transform-origin: center right;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-    animation-duration: 10ms;
-  }
+section:nth-of-type(even) {
+  /*if not specified otherwise, sections that follow one another will altern colors*/
+  background: white;
 }
 
-@-webkit-keyframes translation {
-  0% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@keyframes translation {
-  0% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes color {
-  0% {
-    color: #f6f6f6;
-  }
-  50% {
-    color: #707070;
-  }
-  100% {
-    color: #f6f6f6;
-  }
-}
-
-@keyframes color {
-  0% {
-    color: #f6f6f6;
-  }
-  50% {
-    color: #707070;
-  }
-  100% {
-    color: #f6f6f6;
-  }
-}
-
-@-webkit-keyframes fade_out {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-
-@keyframes fade_out {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-
-@-webkit-keyframes fade_in {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade_in {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.btn > a {
-  border-radius: 1.25rem;
-  font-size: 0.75rem;
-  color: #fff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(180deg, #ff79da, #9356dc);
-  -webkit-box-shadow: 0rem 0.15rem 0.5rem #aaaaaa;
-          box-shadow: 0rem 0.15rem 0.5rem #aaaaaa;
-}
-
-.btn > a p {
-  font-size: 0.75rem;
-  margin: 1.25em 1.438rem;
-  font-weight: 500;
-}
-
-.btn__commande {
-  margin-top: 2.25rem;
-  margin-bottom: 5.188rem;
+section {
+  text-align: left;
+  padding: 0 20px 0 20px;
+  min-height: 440px;
 }
 
 .loader {
@@ -277,882 +100,654 @@ body {
           animation: color 3s ease-in-out infinite;
 }
 
-.main__fade-in {
-  opacity: 0;
-  -webkit-animation: fade_in 1s 2s ease-in forwards;
-          animation: fade_in 1s 2s ease-in forwards;
-}
 
-/* Header */
-/* Div Logo */
-.logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0rem;
-  padding-top: 1.438rem;
-  padding-bottom: 0.375rem;
-  color: #000;
-}
-
-.logo h1 {
-  font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
-  font-size: 1.438rem;
-  margin: 0rem;
-}
-
-.logo__grid--title {
-  -ms-grid-column: 2;
-  grid-column: 2;
-}
-
-.logo__grid--icon {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  padding-right: 70%;
-}
-
-.logo__restaurants {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-}
-
-.location {
-  height: 3.125rem;
-  font-size: 0.75rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* Degradé lineaire selon une droite horizontale, qui laisse 0.01 rem pour la couleurnla plus sombre (en haut de la box) et le reste pour la couleur la plus claire */
-  background: -webkit-gradient(linear, left top, left bottom, from(#aaaaaa), color-stop(0.01rem), to(#eaeaea));
-  background: linear-gradient(180deg, #aaaaaa, 0.01rem, #eaeaea);
-}
-
-.location > p {
-  font-size: 0.75rem;
-  font-weight: 400;
-  margin: 0rem 0rem 0rem 1.125rem;
-}
-
-.explain {
-  background-color: #f6f6f6;
-  padding-top: 2.75rem;
-  padding-bottom: 3.563rem;
-}
-
-.explain > h2 {
-  text-align: center;
-  margin: 0 4.063rem;
-}
-
-.explain p {
-  font-size: 0.875rem;
-  font-weight: 300;
-  text-align: center;
-  margin: 1.25rem 2.5rem 2.5rem 1.938rem;
-}
-
-.main__margin {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
-.carte {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 16.25rem 2.5rem 1fr;
-      grid-template-rows: 16.25rem 2.5rem 1fr;
+@keyframes removeLoader {
+  0% {
+    opacity: 1;
+    z-index: 9999;
   }
-
-  .card__tag{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    font-size: .9em;
-    font-weight: 500 !important;
-    top: 15px;
-    right: 15px;
-    border-radius: 3px;
-    font-weight: bold;
-    color: #278870;
-    height: 30px;
-    width: 80px;
-    background: #99e2d0;
+  100% {
+    opacity: 0;
+    z-index: -9999;
   }
-.carte__header {
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  -ms-grid-row-span: 2;
-      grid-row-end: span 2;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  overflow: hidden;
 }
-
-.carte__header--img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  width: 100%;
+@keyframes coverOpen {
+  100% {
+    transform: rotateY(-25deg);
+  }
 }
-
-.carte__menu {
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  -ms-grid-row-span: 3;
-      grid-row-end: span 3;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  background-color: #f6f6f6;
-  border-radius: 1.875rem 1.875rem 0rem 0rem;
+@keyframes pageOpen {
+  100% {
+    transform: rotateY(-30deg);
+  }
 }
-
-.carte__menu--title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 2.188rem 0rem 2.75rem 0rem;
+@keyframes pageTurn {
+  100% {
+    transform: rotateY(-155deg);
+  }
 }
-
-.carte__menu--title h2 {
-  font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
-  margin: 0rem 0rem;
+@keyframes coverTurn {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-160deg);
+  }
 }
-
-.carte__menu--header_list {
-  text-transform: uppercase;
-  margin: 0rem 0rem;
-}
-
-.carte__menu--header_line {
-  margin: 0.563rem 0rem 0.875rem 0rem;
-  width: 2.5rem;
-  border-bottom: #99e2d0 solid 0.188rem;
-}
-
-.carte__plate {
-  border-radius: 0.813rem;
-  background-color: #fff;
-  padding-left: 0.625rem;
-  margin-bottom: 0.875rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 85% 15%;
-      grid-template-columns: 85% 15%;
-  -ms-grid-rows: 2.188rem 2.188rem;
-      grid-template-rows: 2.188rem 2.188rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-animation: fade-in 2s linear forwards;
-          animation: fade-in 2s linear forwards;
-}
-
-.carte__plate--title {
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 1rem 0rem 0rem 0rem;
-}
-
-.carte__plate--description {
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  font-size: 0.915rem;
-  color: #202020;
-  margin: 0rem 0rem 1rem 0rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.carte__plate--price {
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  font-size: 0.955rem;
-  font-weight: 500;
-  color: #353535;
-  margin: 0rem 0rem 1rem 0rem;
-  padding-right: 0.625rem;
-  text-align: right;
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+.button {
+  cursor: pointer;
+  display: inline-block;
+  color: white;
   font-weight: bold;
+  text-align: center;
+  border-radius: 30px;
+  padding: 20px;
+  width: 220px;
+  background: linear-gradient(180deg, #FF79DA, #9356DC);
+  /*creates a background with a gradient color from Secondary to Primary*/
+  box-shadow: calc(5px - 2px) 5px 5px #d0d0d0;
+  font-size: 1em;
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: calc(60px + 25px);
 }
-
-.carte__plate--selector {
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  -ms-grid-row-span: 2;
-      grid-row-end: span 2;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  width: 100%;
-  background-color: #99e2d0;
-  color: #fff;
-  font-size: 1.75rem;
-  border-radius: 0rem 0.813rem 0.813rem 0rem;
-  -webkit-transform: scale(0, 0);
-          transform: scale(0, 0);
+.button__bg {
+  /*on hover this div on top of .button will appear (changin opacity) and make it lighter in color*/
+  background: white;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
   opacity: 0;
-  overflow: hidden;
-  -webkit-transform-origin: center right;
-          transform-origin: center right;
+  transition: opacity 300ms;
+}
+.button:hover {
+  box-shadow: calc(5px + 1px) calc(5px + 2px) calc(5px + 2px) #d0d0d0;
+}
+.button:hover .button__bg {
+  opacity: 0.25;
 }
 
-.carte__plate:hover, .carte__plate:active {
+input.button {
+  border: none;
+}
+
+.fa-heart {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.fa-heart::before {
+  position: relative;
+  z-index: 1;
+  transition: opacity 600ms;
+}
+.fa-heart__bg::before {
+  /*this icon on top of the other will appear on hover and creates the changing colored background effect*/
+  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  /*creates a background with a gradient color from Primary to Secondary*/
+  -webkit-background-clip: text;
+  /*the background is "cut" in the shape of the text*/
+  -webkit-text-fill-color: transparent;
+  /*the text itself is invisible to allow for the background gradient to be seen*/
+  opacity: 0;
+  position: relative;
+  transition: opacity 600ms;
+  z-index: 0;
+}
+.fa-heart:hover::before {
+  opacity: 0;
+}
+.fa-heart:hover + .fa-heart__bg::before {
+  opacity: 1;
+}
+
+/* LIST ITEMS*/
+#content ol, #content ul {
+  list-style: none;
+  /*remove all markers, even for ol. See below where they are added for ol with :before*/
+}
+#content ol li, #content ul li {
+  box-shadow: calc(5px - 2px) 5px 5px #e6e6e6;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  background-color: white;
+}
+#content ol li + li, #content ul li + li {
+  margin-top: 25px;
+}
+
+ol {
+  counter-reset: item 0;
+  padding: 0 0 0 12.5px;
+}
+ol .item {
+  background: transparent;
+  counter-increment: item;
+  line-height: 75px;
+  font-weight: bold;
+  z-index: 1;
+}
+ol .item:before {
+  /*CREATING THE ROUND COUNTER FOR OL*/
+  content: counter(item);
+  border-radius: 100%;
+  background-color: #9356DC;
+  width: 25px;
+  line-height: 25px;
+  text-align: center;
+  margin-left: -12.5px;
+  /*puts the counter on the edge of the li*/
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+}
+ol .item .fas {
+  /*will change color on hover via another icon on top of it (see .fas--hover below) */
+  color: gray;
+  line-height: 75px;
+  padding: 0 20px 0 20px;
+  position: relative;
+  z-index: 0;
+}
+ol .item .fas--hover {
+  /*the icon will change coler on hover*/
+  position: absolute;
+  left: 12.5px;
+  /*to account for the ol marker*/
+  z-index: 10;
+  color: #9356DC;
+  opacity: 0;
+  /*not visible when no hover */
+}
+ol .item__bg {
+  /*the background color will change on hover, using a div on top of this selector*/
+  background: #f6f6f6;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 300ms;
+}
+ol .item__bg--hover {
+  /*this will appear on hover*/
+  opacity: 0;
+  background: #9356DC;
+  transition: opacity 300ms;
+}
+ol .item:hover {
+  /*makes the usual background color disappear*/
+  /*makes the new background color appear on hover*/
+  /*makes the usual icon disappear */
+  /*makes the icon with new color appear on hover*/
+}
+ol .item:hover .item__bg {
+  opacity: 0;
+}
+ol .item:hover .item__bg--hover {
+  opacity: 0.1;
+}
+ol .item:hover .fas {
+  opacity: 0;
+}
+ol .item:hover .fas--hover {
+  opacity: 1;
+}
+
+/*LIST OF RESTAURANTS*/
+#restaurants ul {
+  position: relative;
+  padding-bottom: 60px;
+}
+#restaurants ul li {
+  height: 250px;
+  position: relative;
+}
+#restaurants ul li a > p {
+  /*Style of 'Nouveau' panel*/
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  padding: 5px;
+  width: max-content;
+  color: green;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  background: #99E2D0;
+  box-shadow: 3px 3px 3px #e6e6e6;
+  border-radius: 5px;
+}
+@media screen and (min-width: 650px) {
+  #restaurants ul li + li {
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 650px) {
+  #restaurants ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    /*on large screen, list will not appear on one column but two*/
+  }
+}
+#restaurants ul figure {
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: inline-block;
+  min-height: 100%;
+  min-width: 100%;
+}
+#restaurants ul figure img {
+  max-height: calc(100% - 90px);
+  border-radius: 30px 30px 0 0;
+}
+#restaurants ul figure figcaption {
+  box-sizing: border-box;
+  min-height: 90px;
+  max-height: 90px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+}
+#restaurants ul figure figcaption .fa-heart {
+  line-height: 90px;
+  margin: 0 20px 0 0;
+}
+@media screen and (min-width: 650px) {
+  #restaurants {
+    background: #eaeaea;
+  }
+}
+
+section.menu {
+  text-align: left;
+  background: #f6f6f6;
+  padding: 0 20px 0 20px;
+}
+@media screen and (min-width: 650px) {
+  section.menu {
+    min-width: calc(450px);
+    /*to make all sections of menu the same width*/
+  }
+}
+section.menu h2 {
+  text-transform: uppercase;
+  font-weight: normal;
+  position: relative;
+}
+section.menu h2 span {
+  /*creates an underline that only span a percentage of the parent element width (default is set in _variables) */
+  position: absolute;
+  left: 0;
+  right: calc(100% - 2em);
+  bottom: calc(25px - 5px);
+  border-bottom: 4px solid #99E2D0;
+}
+section.menu .menu-item {
+  display: flex;
   cursor: pointer;
 }
-
-.carte__plate:hover > .carte__plate--selector {
-  -webkit-animation: apparition 300ms ease-in-out forwards;
-          animation: apparition 300ms ease-in-out forwards;
-}
-
-.carte__plate:hover > .carte__plate--selector > i {
-  -webkit-animation: spin 500ms ease-in-out forwards;
-          animation: spin 500ms ease-in-out forwards;
-}
-
-.carte__plate:hover > .carte__plate--price {
-  -webkit-animation: translation 300ms ease-in-out forwards;
-          animation: translation 300ms ease-in-out forwards;
-}
-
-.carte__plate:active > .carte__plate--selector {
-  -webkit-animation: apparition 300ms ease-in-out forwards;
-          animation: apparition 300ms ease-in-out forwards;
-}
-
-.carte__plate:active > .carte__plate--selector > i {
-  -webkit-animation: spin 5ms ease-in-out forwards;
-          animation: spin 5ms ease-in-out forwards;
-}
-
-.carte__plate:active > .carte__plate--price {
-  -webkit-animation: translation 300ms ease-in-out forwards;
-          animation: translation 300ms ease-in-out forwards;
-}
-
-
-
-.carte__fade-in--entrees .carte__plate, .carte__fade-in--entrees .carte__menu--header_fade {
-  opacity: 0;
-}
-
-.carte__fade-in--entrees .carte__plate:nth-child(1), .carte__fade-in--entrees .carte__menu--header_fade:nth-child(1) {
-  -webkit-animation: fade_in 1s ease-in 60ms forwards;
-          animation: fade_in 1s ease-in 60ms forwards;
-}
-
-.carte__fade-in--entrees .carte__plate:nth-child(2), .carte__fade-in--entrees .carte__menu--header_fade:nth-child(2) {
-  -webkit-animation: fade_in 1s ease-in 120ms forwards;
-          animation: fade_in 1s ease-in 120ms forwards;
-}
-
-.carte__fade-in--entrees .carte__plate:nth-child(3), .carte__fade-in--entrees .carte__menu--header_fade:nth-child(3) {
-  -webkit-animation: fade_in 1s ease-in 180ms forwards;
-          animation: fade_in 1s ease-in 180ms forwards;
-}
-
-.carte__fade-in--entrees .carte__plate:nth-child(4), .carte__fade-in--entrees .carte__menu--header_fade:nth-child(4) {
-  -webkit-animation: fade_in 1s ease-in 240ms forwards;
-          animation: fade_in 1s ease-in 240ms forwards;
-}
-
-.carte__fade-in--entrees .carte__plate:nth-child(5), .carte__fade-in--entrees .carte__menu--header_fade:nth-child(5) {
-  -webkit-animation: fade_in 1s ease-in 300ms forwards;
-          animation: fade_in 1s ease-in 300ms forwards;
-}
-
-.carte__fade-in--plats .carte__plate, .carte__fade-in--plats .carte__menu--header_fade {
-  opacity: 0;
-}
-
-.carte__fade-in--plats .carte__plate:nth-child(1), .carte__fade-in--plats .carte__menu--header_fade:nth-child(1) {
-  -webkit-animation: fade_in 1s ease-in 360ms forwards;
-          animation: fade_in 1s ease-in 360ms forwards;
-}
-
-.carte__fade-in--plats .carte__plate:nth-child(2), .carte__fade-in--plats .carte__menu--header_fade:nth-child(2) {
-  -webkit-animation: fade_in 1s ease-in 420ms forwards;
-          animation: fade_in 1s ease-in 420ms forwards;
-}
-
-.carte__fade-in--plats .carte__plate:nth-child(3), .carte__fade-in--plats .carte__menu--header_fade:nth-child(3) {
-  -webkit-animation: fade_in 1s ease-in 480ms forwards;
-          animation: fade_in 1s ease-in 480ms forwards;
-}
-
-.carte__fade-in--plats .carte__plate:nth-child(4), .carte__fade-in--plats .carte__menu--header_fade:nth-child(4) {
-  -webkit-animation: fade_in 1s ease-in 540ms forwards;
-          animation: fade_in 1s ease-in 540ms forwards;
-}
-
-.carte__fade-in--plats .carte__plate:nth-child(5), .carte__fade-in--plats .carte__menu--header_fade:nth-child(5) {
-  -webkit-animation: fade_in 1s ease-in 600ms forwards;
-          animation: fade_in 1s ease-in 600ms forwards;
-}
-
-.carte__fade-in--desserts .carte__plate, .carte__fade-in--desserts .carte__menu--header_fade {
-  opacity: 0;
-}
-
-.carte__fade-in--desserts .carte__plate:nth-child(1), .carte__fade-in--desserts .carte__menu--header_fade:nth-child(1) {
-  -webkit-animation: fade_in 1s ease-in 660ms forwards;
-          animation: fade_in 1s ease-in 660ms forwards;
-}
-
-.carte__fade-in--desserts .carte__plate:nth-child(2), .carte__fade-in--desserts .carte__menu--header_fade:nth-child(2) {
-  -webkit-animation: fade_in 1s ease-in 720ms forwards;
-          animation: fade_in 1s ease-in 720ms forwards;
-}
-
-.carte__fade-in--desserts .carte__plate:nth-child(3), .carte__fade-in--desserts .carte__menu--header_fade:nth-child(3) {
-  -webkit-animation: fade_in 1s ease-in 780ms forwards;
-          animation: fade_in 1s ease-in 780ms forwards;
-}
-
-.carte__fade-in--desserts .carte__plate:nth-child(4), .carte__fade-in--desserts .carte__menu--header_fade:nth-child(4) {
-  -webkit-animation: fade_in 1s ease-in 840ms forwards;
-          animation: fade_in 1s ease-in 840ms forwards;
-}
-
-.carte__fade-in--desserts .carte__plate:nth-child(5), .carte__fade-in--desserts .carte__menu--header_fade:nth-child(5) {
-  -webkit-animation: fade_in 1s ease-in 900ms forwards;
-          animation: fade_in 1s ease-in 900ms forwards;
-}
-
-.fonctionnement {
-  margin-top: 3.25rem;
-  margin-bottom: 4.45rem;
-}
-
-.fonctionnement h2 {
-  margin-bottom: 0.625rem;
-}
-
-.fonctionnement__details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 0.813rem;
-  font-weight: 500rem;
-  margin-top: 1.25rem;
-}
-
-.fonctionnement__border {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #f6f6f6;
-  border-radius: 25rem;
+section.menu .menu-item:after {
+  /*To make the pointer appear even on padding areas*/
+  content: "";
+  height: 100%;
   width: 100%;
-  -webkit-box-shadow: 0rem 0.15rem 0.5rem #aaaaaa;
-          box-shadow: 0rem 0.15rem 0.5rem #aaaaaa;
-  margin-left: -0.75rem;
+  position: absolute;
+  top: 0;
+  left: 0px;
 }
-
-.fonctionnement__border--color {
-  background-color: #f6edfe;
+section.menu .menu-item label {
+  /*To make the whole item clickable (with input for future functionnality)*/
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-
-.fonctionnement__number {
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 100%;
-  background-color: #9356dc;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 0.625rem;
-  color: #fff;
-  z-index: 100;
-}
-
-.fonctionnement__texte {
-  font-size: 0.813rem;
-  font-weight: 500rem;
-}
-
-.icon--fonctionnement {
-  font-size: 1.313rem;
-  margin-left: 1.375rem;
-  margin-right: 1.688rem;
-  color: #707070;
-  z-index: 100;
-}
-
-.icon--fonctionnement--color-first {
-  color: #9356dc;
-}
-
-nav {
-  background-color: #f6f6f6;
-  padding-bottom: 2.875rem;
-}
-
-nav h2 {
-  padding-top: 3.75rem;
-  margin-bottom: 1.688rem;
-}
-
-.restaurants {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.restaurants__details {
+section.menu .menu-item__description {
+  position: relative;
   width: 100%;
-  max-width: 20.938rem;
-  height: 15.625rem;
-  background-color: #fff;
-  border-radius: 1.25rem;
-  margin-bottom: 1.125rem;
-  -webkit-box-shadow: 0rem 0.15rem 0.5rem #aaaaaa;
-          box-shadow: 0rem 0.15rem 0.5rem #aaaaaa;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100px;
+  /*add a line worth of height when the name  OR the info of the item takes TWO lines instead of one (case not considered : if both take two lines...)*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*especially important for .menu-item__description--long*/
+  white-space: nowrap;
+  /*allows for the property text-overflow:ellipsis (see below) to work when the user stops hovering */
+  transition: all 300ms ease-in-out;
 }
-
-.restaurants__img {
-  width: 100%;
-  height: 10.938rem;
+section.menu .menu-item__description--long {
+  height: calc(100px + 1.1em);
+}
+section.menu .menu-item__description .long {
+  white-space: normal;
+  /*allows the long name/info of item to take the two lines they need (long */
+}
+section.menu .menu-item__description > * {
+  width: calc(100% - 40px - 5px);
   overflow: hidden;
-  border-radius: 1.25rem 1.25rem 0rem 0rem;
-  position: relative;
+  text-overflow: ellipsis;
+  /*puts the suspension points needed for all phases of animation on animation*/
 }
-
-.restaurants__img img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  width: 100%;
-  border-radius: 1.25rem 1.25rem 0rem 0rem;
+section.menu .menu-item__description p:last-child {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  /*puts the price on the same baseline as info of menu item*/
+  width: 40px;
+  text-align: right;
+  font-weight: bold;
 }
-
-.restaurants__text {
-  display: -webkit-box;
-  display: -ms-flexbox;
+section.menu .menu-item__button {
+  /*animated to appear on hover*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #99E2D0;
+  border-radius: 0 20px 20px 0;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #000;
-}
-
-.restaurants__text--title {
-  margin: 1.25rem 0rem 0rem 0.875rem;
-  
-}
-
-.restaurants__text--description {
-  margin: 0.625rem 0rem 0rem 0.875rem;
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.restaurants__text > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.icon__restaurants--empty {
-  font-size: 1.375rem;
-  cursor: copy;
-}
-
-.icon__restaurants--full {
-  font-size: 1.375rem;
+  width: 0;
+  /*will change with transition*/
   opacity: 0;
-  cursor: copy;
-  position: relative;
-  top: 50%;
-  right: 50%;
-  
-  
+  /*will change with transition*/
+  transition: all 300ms ease-in-out;
 }
-
-
-.checkbox {
+section.menu .menu-item__button span.fas {
+  /*checked icon animated on hover*/
+  margin: auto;
+  background: white;
+  border-radius: 50%;
+  color: #99E2D0;
+  padding: 5px;
+  font-size: 0.7em;
+}
+section.menu .menu-item__button input {
+  /*will be useful for functionnality but no need to display*/
   position: absolute;
   opacity: 0;
-  height: 0;
-  width: 0;
 }
-
-.checkbox:hover + label {
-  color: #9356dc;
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
+section.menu .menu-item:hover {
+  /*ANIMATION: CHOOSING A MENU ITEM*/
 }
-
-.checkbox:hover + label .icon__restaurants--empty {
+section.menu .menu-item:hover .menu-item__description {
+  width: calc(100% - 100px);
+}
+section.menu .menu-item:hover .menu-item__description > * {
+  /*hides the too long names/infos with suspension points*/
+  white-space: nowrap;
+  /*this actually change only for --long title or info*/
+}
+section.menu .menu-item:hover .menu-item__button {
+  /*checked icon appears*/
   opacity: 1;
+  width: 100px;
+}
+section.menu .menu-item:hover .menu-item__button .fas {
+  animation: checkRotation 300ms ease-in-out;
 }
 
-.checkbox:hover + label .icon__restaurants--full {
-  opacity: 0.5;
-  
-  
+@keyframes checkRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+/*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
+/*animation delay of appearance is calculated based on 
+both the number of the section (first is "Entrees", second is "Plats"...) 
+from 1 to 3, and the number of the item in the section
+from 1 to a number max of items (default : 4, defined as a variable in sass file)*/
+/*small inconvenience : because of $nummax-items being always the same in 
+($animation-dur--short * $nummax-items) * ($i - 1) that
+allow for the sections to appear one at a time  
+the  delay will not be completely even and there will be
+a "gap" after a section with less than $nummax-items items
+*/
+.menu:nth-child(1) .menu-item:nth-child(1) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 300ms;
+}
+.menu:nth-child(1) .menu-item:nth-child(2) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 450ms;
+}
+.menu:nth-child(1) .menu-item:nth-child(3) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 600ms;
+}
+.menu:nth-child(1) .menu-item:nth-child(4) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 750ms;
 }
 
-.checkbox:checked + label {
-  color: #9356dc;
+.menu:nth-child(2) .menu-item:nth-child(1) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 900ms;
+}
+.menu:nth-child(2) .menu-item:nth-child(2) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1050ms;
+}
+.menu:nth-child(2) .menu-item:nth-child(3) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1200ms;
+}
+.menu:nth-child(2) .menu-item:nth-child(4) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1350ms;
 }
 
-.checkbox:checked + label .icon__restaurants--empty {
-  opacity: 1;
+.menu:nth-child(3) .menu-item:nth-child(1) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1500ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(2) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1650ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(3) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1800ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(4) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1950ms;
 }
 
-.checkbox:checked + label .icon__restaurants--full {
-  opacity: 0.5;
+@keyframes itemAppearing {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
-
-.checkbox:active + label {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
-}
-
-
-
-.checkbox:not(:checked) + label .icon__restaurants--empty {
-  opacity: 1;
-}
-
-.checkbox:not(:checked) :hover + label .icon__restaurants--full {
-  opacity: 0;
-  color: #9356dc;
-}
-
-.checkmark {
-  cursor: copy;
-  height: auto;
-  width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
+header {
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 60px;
+  max-width: 100%;
+  box-shadow: 0 5px 5px rgba(53, 53, 53, 0.3);
+  background-color: white;
+}
+header img {
+  max-width: 165px;
+  max-height: 100%;
+  margin: auto;
+}
+header a {
+  position: absolute;
+  left: 0;
+  padding-left: 20px;
+  font-size: 1.3em;
+  line-height: 60px;
 }
 
 footer {
+  height: 200px;
   background-color: #353535;
-  color: #fff;
-  padding-bottom: 2.375rem;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
-
-footer > h4 {
-  color: #fff;
-  margin: 0rem 0rem 1.688rem 1.583rem;
-  padding-top: 1.688rem;
-}
-
-footer a {
-  text-decoration: none;
-  color: #fff;
-}
-
-footer a:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
-footer a p {
-  display: inline;
-}
-
-footer div {
-  margin-left: 1.563rem;
-  margin-bottom: 0.875rem;
-  font-size: 0.813rem;
-}
-
-.footer__icon {
-  padding-right: 0.75rem;
-}
-
-.footer__icon--position {
-  margin-right: 0.438rem;
-}
-
-/*
-  Media querries
-*/
-/* Mobile Phone */
-@media screen and (max-width: 320px) {
-  .logo {
-    color: #000;
-  }
-  .body {
-    width: 320px;
-    margin: auto;
+@media screen and (min-width: 650px) {
+  footer {
+    height: 100px;
   }
 }
 
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-  body {
-    width: 768px;
-    margin: auto;
-  }
-  .logo {
-    color: red;
-  }
-  .carte {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 2fr;
-        grid-template-columns: 2fr;
-    -ms-grid-rows: 25.813rem 2.5rem 1fr;
-        grid-template-rows: 25.813rem 2.5rem 1fr;
-  }
-  .carte__header {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-row-span: 2;
-        grid-row-end: span 2;
-    -ms-grid-column: 1;
-    grid-column: 1;
-    overflow: hidden;
-  }
-  .carte__header--img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
-    width: 100%;
-  }
-  .restaurants__img {
-    width: 100%;
-    height: 25.813rem;
-    overflow: hidden;
-    border-radius: 1.25rem 1.25rem 0rem 0rem;
-  }
-  .fonctionnement {
-    width: 50%;
-    margin: auto;
-  }
-  .restaurants {
-    display: -webkit-box;
-    display: -ms-flexbox;
+footer * {
+  color: white;
+}
+
+footer p {
+  font-family: Shrikhand, cursive;
+  padding: 0 5px 0 5px;
+  line-height: 60px;
+  font-size: 1em;
+}
+
+footer ul {
+  flex-grow: 1;
+  padding: 0 5px 0 5px;
+}
+@media screen and (min-width: 650px) {
+  footer ul {
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  .restaurants__details {
-    margin: 0rem 1rem 1rem 1rem;
-    width: 15.625rem;
-    height: 15.625rem;
-  }
-  .carte__fade-in {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-    grid-column-gap: 0.5rem;
-    grid-auto-flow: column;
-  }
-  .carte__fade-in--entrees {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-column: 1;
-        grid-column-start: 1;
-  }
-  .carte__fade-in--plats {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-column: 2;
-        grid-column-start: 2;
-  }
-  .carte__fade-in--desserts {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-column: 3;
-        grid-column-start: 3;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 
-/* Desktop */
-@media screen and (min-width: 1024px) {
-  body {
-    width: 1024px;
-    margin: auto;
-  }
-  .logo {
-    color: green;
-  }
-  .fonctionnement {
-    width: 38%;
-    margin: auto;
-  }
-  .carte {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 2fr;
-        grid-template-columns: 2fr;
-    -ms-grid-rows: 34.375rem 2.5rem 1fr;
-        grid-template-rows: 34.375rem 2.5rem 1fr;
-  }
-  .carte__header {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-row-span: 2;
-        grid-row-end: span 2;
-    -ms-grid-column: 1;
-    grid-column: 1;
-    overflow: hidden;
-  }
-  .carte__header--img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
-    width: 100%;
-  }
-  .carte__fade-in {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: 4.375rem 4.375rem 4.375rem 4.375rem 4.375rem;
-        grid-template-rows: 4.375rem 4.375rem 4.375rem 4.375rem 4.375rem;
-    grid-column-gap: 2rem;
-    grid-auto-flow: column;
-  }
-  .carte__fade-in--entrees {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-column: 1;
-        grid-column-start: 1;
-  }
-  .carte__fade-in--plats {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-column: 2;
-        grid-column-start: 2;
-  }
-  .carte__fade-in--desserts {
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-    -ms-grid-column: 3;
-        grid-column-start: 3;
+footer li {
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+footer span.fas {
+  display: inline-block;
+  width: 0.8em;
+  margin-right: 0.8em;
+  font-size: 0.8em;
+}
+
+footer ul > li + li {
+  padding-top: 0.8em;
+}
+@media screen and (min-width: 650px) {
+  footer ul > li + li {
+    padding-top: 0px;
   }
 }
+
+#localisation {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaeaea;
+}
+#localisation input[type=text] {
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  margin: 0 1em;
+  width: 150px;
+  /*needs to be improved: should adjust depending on the entry*/
+  background: transparent;
+}
+#localisation input[type=submit] {
+  display: none;
+}
+
+#presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+#presentation h1 {
+  text-align: center;
+}
+#presentation p {
+  text-align: center;
+  color: #4d4d4d;
+}
+@media screen and (min-width: 650px) {
+  #presentation {
+    width: calc(100% - 360px);
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #fonctionnement {
+    box-sizing: border-box;
+    width: 360px;
+    position: absolute;
+    right: 0px;
+    top: calc(60px + 60px);
+  }
+}
+
+/*RESTAURANT PAGES*/
+form h1 {
+  font-family: Shrikhand, cursive;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  height: calc(60px - 30px);
+  margin-top: -30px;
+  background: #f6f6f6;
+  padding: 30px 20px 5px 20px;
+  border-radius: 30px 30px 0 0;
+}
+form h1 span.fa-heart {
+  font-size: 1em;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  font-size: inherit;
+  /*otherwise std size, too large*/
+}
+@media screen and (min-width: 650px) {
+  form div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
