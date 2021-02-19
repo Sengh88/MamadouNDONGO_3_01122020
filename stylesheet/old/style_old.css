@@ -9,7 +9,7 @@
   font weight Roboto : 100, 300, 400, 500
 */
 p, h2{
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -31,7 +31,7 @@ body{
 }
 
 h1{
-  font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
+  font-family: 'Shrikhand', sans-serif;
   font-size: 1.438rem;
   margin: 0rem;
 }

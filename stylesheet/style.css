@@ -1,9 +1,13 @@
-/*px*/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap');
+
+</*px*/
 html, body {
   max-width: 100%;
   min-height: 100%;
   user-select: none;
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: black;
 }
 
@@ -779,7 +783,7 @@ footer * {
 }
 
 footer p {
-  font-family: Shrikhand, cursive;
+  font-family: 'Shrikhand', cursive;
   padding: 0 5px 0 5px;
   line-height: 60px;
   font-size: 1em;
@@ -871,7 +875,7 @@ footer ul > li + li {
 
 /*RESTAURANT PAGES*/
 form h1 {
-  font-family: Shrikhand, cursive;
+  font-family: 'Shrikhand', cursive;
   margin: 0;
   display: flex;
   justify-content: space-between;
