@@ -1,14 +1,31 @@
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap');
+@charset "UTF-8";
+/* Set et Reset CSS */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap");
+
 
 </*px*/
 html, body {
   max-width: 100%;
   min-height: 100%;
   user-select: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   color: black;
+}
+
+h1 {
+  font-family: 'Shrikhand';
+}
+
+
+p, h2, h3 {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+ol {
+  font-family: 'Roboto';
 }
 
 body {
@@ -26,10 +43,12 @@ body {
 a {
   text-decoration: none;
   color: black;
+  font-family: 'Roboto';
 }
 
 ul {
   list-style: none;
+  font-family: 'Roboto';
 }
 
 h1 {
@@ -302,6 +321,7 @@ section {
   position: relative;
   margin-top: 60px;
   margin-bottom: calc(60px + 25px);
+  
 }
 .button__bg {
   /*on hover this div on top of .button will appear (changin opacity) and make it lighter in color*/
@@ -783,7 +803,7 @@ footer * {
 }
 
 footer p {
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Shrikhand';
   padding: 0 5px 0 5px;
   line-height: 60px;
   font-size: 1em;
@@ -875,7 +895,7 @@ footer ul > li + li {
 
 /*RESTAURANT PAGES*/
 form h1 {
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Shrikhand';
   margin: 0;
   display: flex;
   justify-content: space-between;
